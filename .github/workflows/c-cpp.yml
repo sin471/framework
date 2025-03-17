@@ -14,12 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: cmake
-    - run: mkdir -p build
+      run: mkdir -p build
           cd build \
           cmake .. \
     - name: make
-    - run: make -j 4 simulator-cli
+      run: make -j 4 simulator-cli
     - name: Create Release
-    - run: gh release create [tag] --generate-notes [attachment-file]
-    - env:
+      run: gh release create [tag] --generate-notes [attachment-file]
+    env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
