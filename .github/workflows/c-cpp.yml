@@ -31,13 +31,11 @@ jobs:
     - name: cmake
       run: |
           mkdir -p build 
-          cd "build" 
+          cd build 
           cmake .. 
     - name: make
       run: | 
-          ls
-          pwd
-          ls ..
+          cd build
           make -j 4 simulator-cli
     - name: Create Release
       run: gh release create [tag] --generate-notes [attachment-file]
