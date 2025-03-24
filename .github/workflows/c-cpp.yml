@@ -34,7 +34,11 @@ jobs:
           cd "build" 
           cmake .. 
     - name: make
-      run: make -j 4 simulator-cli
+      run: | 
+          ls
+          pwd
+          ls ..
+          make -j 4 simulator-cli
     - name: Create Release
       run: gh release create [tag] --generate-notes [attachment-file]
     env:
