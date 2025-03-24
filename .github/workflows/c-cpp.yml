@@ -13,6 +13,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
+    - name: apt install
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            cmake \
+            protobuf-compiler \
+            libprotobuf-dev \
+            qtbase5-dev \
+            libqt5opengl5-dev \
+            g++ \
+            libusb-1.0-0-dev \
+            libsdl2-dev \
+            libqt5svg5-dev \
+            libssl-dev
     - name: cmake
       run: |
           mkdir -p build 
