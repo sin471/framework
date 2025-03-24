@@ -38,6 +38,6 @@ jobs:
           cd build
           make -j 4 simulator-cli
     - name: Create Release
-      run: gh release create [tag] --generate-notes [attachment-file]
+      run: gh release create latest
     env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
