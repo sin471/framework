@@ -16,7 +16,7 @@ jobs:
     - name: cmake
       run: mkdir -p build \
           && cd build \
-          && cmake .. \
+          && cmake .. 
     - name: make
       run: make -j 4 simulator-cli
     - name: Create Release
