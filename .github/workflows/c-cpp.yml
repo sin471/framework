@@ -15,9 +15,9 @@ jobs:
     - uses: actions/checkout@v4
     - name: cmake
       run: |
-          - mkdir -p build 
-          - cd "build" 
-          - cmake .. 
+          mkdir -p build 
+          cd "build" 
+          cmake .. 
     - name: make
       run: make -j 4 simulator-cli
     - name: Create Release
