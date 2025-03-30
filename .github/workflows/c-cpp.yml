@@ -37,15 +37,6 @@ jobs:
       run: | 
           cd build
           make -j 4 simulator-cli
-    - name: clean
-      run: |
-        mv build/bin .
-        rm -rf $(ls | grep -vE '^(config|bin)$')
-        cd ../..
-    - name: ls
-      run: |
-          pwd
-          ls
     - name: tar
       run: |
           cd ..
