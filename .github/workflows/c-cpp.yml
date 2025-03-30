@@ -50,11 +50,9 @@ jobs:
       run: |
           cd ..
           tar zcvf framework.tar.gz framework
+          mv framework.tar.gz framework
     - name: Create Release
       run: |
-           ls
-           pwd
-           cd ..
            ls
            pwd
            gh release create latest framework.tar.gz
