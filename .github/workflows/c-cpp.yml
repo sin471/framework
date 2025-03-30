@@ -47,7 +47,9 @@ jobs:
           pwd
           ls
     - name: tar
-      run: tar zcvf framework.tar.gz framework
+      run: |
+          cd ..
+          tar zcvf framework.tar.gz framework
     - name: Create Release
       run: gh release create latest framework.tar.gz
     env:
