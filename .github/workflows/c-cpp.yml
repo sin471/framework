@@ -41,12 +41,14 @@ jobs:
       run: |
         mv build/bin .
         rm -rf $(ls | grep -vE '^(config|bin)$')
-        cd ..
+        cd ../..
     - name: ls
       run: |
           pwd
           ls
+    - name: tar
+      run: tar zcvf framework.tar.gz framework
     - name: Create Release
-      run: gh release create latest . 
+      run: gh release create latest framework.tar.gz
     env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
