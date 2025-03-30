@@ -37,7 +37,11 @@ jobs:
       run: | 
           cd build
           make -j 4 simulator-cli
+    - name: ls
+      run: |
+          pwd
+          ls
     - name: Create Release
-      run: gh release create latest
+      run: gh release create latest 
     env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
