@@ -41,11 +41,12 @@ jobs:
       run: |
         mv build/bin .
         rm -rf $(ls | grep -vE '^(config|bin)$')
+        cd ..
     - name: ls
       run: |
           pwd
           ls
     - name: Create Release
-      run: gh release create latest 
+      run: gh release create latest . 
     env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
